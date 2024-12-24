@@ -17,6 +17,7 @@ setup(
     ],
     python_requires='>=3.6',           # 支持的最低 Python 版本
     install_requires=[                 # 依赖包列表
+        "pycryptodome>=3.21.0",
         "requests>=2.32.3",
     ],
 )
