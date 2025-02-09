@@ -105,3 +105,22 @@ result = library.request(data, 'address/verifyAddress')
 // 验签
 checkSign = library.check_signature(json.loads(result))
 ```
+
+```
+# 地址状态批量同步接口，具体参数，参考文档
+data = {
+    "address_list": [{
+        "coin": "trx",
+        "address": "TNv1kD5Kak1jFYf7qcqDK7S62yyUr7TELE",
+        "user_id": 3
+    },{
+        "coin": "trx",
+        "address": "TLQ5WFVYigMedok1WvMCVw9RYBSVv9bDyW",
+        "user_id": 4
+    },]
+}
+# 正确返回数据为json格式，异常则抛出
+result = library.request(data, 'address/syncBatchStatus')
+// 验签
+checkSign = library.check_signature(json.loads(result))
+```

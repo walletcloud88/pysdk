@@ -48,6 +48,18 @@ class Library:
         sorted_data = sorted(data.items())
         pairs = []
         for k, v in sorted_data:
+            if isinstance(v, list):
+                v_dict = []
+                for vv in v:
+                    if isinstance(vv, dict):
+                        vv = self.array_to_string(vv)
+                        v_dict.append(vv)
+
+                if len(v_dict) == 0:
+                    v = self.array_to_string(v)
+                else:
+                    v = self.array_to_string(v_dict)
+
             if isinstance(v, dict):
                 v = self.array_to_string(v)
             pairs.append(f"{k}={v}")
